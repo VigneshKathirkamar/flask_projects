@@ -8,14 +8,14 @@
 </head>
 <body>
     <form action="/" method="POST">
-    Weight(Kg)
-    <input type="text" name="Weight"><br>
-    Height(Kg)
-    <input type="text" name="Height"><br>
+    Enter first number 
+    <input type="text" name="first_num"><br><hr>
+    Enter second number
+    <input type="text" name="second_num"><br><hr>
     <button type="submit" value="submit">Calculate</button>
     </form>
-    {%if bmi%}
-    <p>Your BMI is {{bmi}}</p>   
+    {%if sum%}
+    <p>The sum of two numbers is {{sum}}</p>   
     {% endif %} 
 
 </body>
