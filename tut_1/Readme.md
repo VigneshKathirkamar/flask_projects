@@ -9,6 +9,7 @@ First create a simple flask web app (like addition of two numbers by getting inp
 Pre-requisites:
 - Billing enabled GCP project (Projects created in trial version also supports billing)
 - glcoud sdk installed locally
+- make sure you name your python file as `main.py`
 
 Create the necessay files such as "requirements.txt" and "app.yaml"
 
