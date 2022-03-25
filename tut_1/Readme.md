@@ -17,7 +17,7 @@ Go to the root folder where the files reside and run
 ```
 gcloud auth login
 gcloud config set project <put your project id here>
-gcloud app deply
+gcloud app deploy
 ```
 
 
