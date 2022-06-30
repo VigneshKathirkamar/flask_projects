@@ -1,12 +1,14 @@
 Build docker image:
-docker build -t hello-world .
+sudo docker build -t hello-world .
 
+sudo docker login
+enter unmae and password
 
 Tag docker image:
 
-docker tag <docker image name>:<tag> <docker user id>/<some tag name>
+sudo docker tag <docker image name>:<tag> <docker user id>/<some tag name>
 Eg:
-docker tag hello_world:latest vigneshkathirkamar/firstimage
+sudo docker tag hello_world:latest vigneshkathirkamar/firstimage
 
 Push to docker hub:
 sudo docker push vigneshkathirkamar/firstimage
