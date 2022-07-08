@@ -15,7 +15,7 @@ spec:
     spec:
       containers: 
       - name: flask-app
-        image: vigneshkathirkamar/flasktime:0.0.1
+        image: vigneshkathirkamar/hello:0.0.1
         # image: vigneshkathrikamar/flaskhello
         imagePullPolicy: Always
         ports:
