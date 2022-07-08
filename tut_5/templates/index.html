@@ -8,7 +8,7 @@
 </style> -->
 <head>
     <h2>
-        Display image
+        <center>Image Statistics</center>
     </h2>
 </head>
 <body>
@@ -16,9 +16,15 @@
     <tr>
        <th> <img src="{{ user_image }}" alt="User Image">
         <figcaption>Original image</figcaption> </th>
+        <th><img src="{{ blur_image }}" alt="Blur Image">
+        <figcaption>Blur image</figcaption></th>
         <th><img src="{{ binary_image }}" alt="Binary Image">
         <figcaption>Binary image</figcaption></th>
     </tr>
     </table>
+    <ul>
+        <li>The image size is {{ size }} pixels</li>
+        <li>The image dataype is {{ img_data_type }}</li>
+    </ul>
 </body>
 </html>
