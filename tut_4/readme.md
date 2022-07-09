@@ -1,5 +1,11 @@
 # "Hello World" in Kubernetes
 
+## Pre-requisites:
+<ul>
+<li>Account on docker hub</li>
+<li>Minikube installed</li>
+</ul>
+
 ## Build docker image:
 ```
 sudo docker build -t hello-world .
