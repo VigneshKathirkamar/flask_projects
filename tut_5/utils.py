@@ -1,5 +1,21 @@
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
+
+def colorHistogram(img,histogram_path):
+    chans = cv2.split(img)
+    colors = ("b", "g", "r")
+    plt.figure()
+    plt.title("'Flattened' Color Histogram")
+    plt.xlabel("Bins")
+    plt.ylabel("# of Pixels")
+    # loop over the image channels
+    for (chan, color) in zip(chans, colors):
+        # create a histogram for the current channel and plot it
+        hist = cv2.calcHist([chan], [0], None, [256], [0, 256])
+        plt.plot(hist, color=color)
+        plt.xlim([0, 256])
+    plt.savefig(histogram_path+'/histogram.png')    
 
 def getContours(imgDil,imgContour):
     """
@@ -7,9 +23,6 @@ def getContours(imgDil,imgContour):
     
     """
     contours,heirarchy = cv2.findContours(imgDil,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_TC89_KCOS)
-    # contours is a list of all contours in the image
-#     print(len(contours))
-#     print(contours[0],contours[1],contours[2])
     for cnt in contours:
         area = cv2.contourArea(cnt)
         # print("Area of contours",area)
