@@ -6,7 +6,19 @@ kind: Service
 metadata:
   name: flask-service
 spec:
+  # there are four types of K8's service
+  # (i) Cluster IP (default) (ii) Headless (iii) NodePort (iv) LoadBalancer
   type: NodePort
+  # selector looks for the pod which has the 
+  # labels specified here, for eg: here the labels is
+  # "app: flask-app", the selector forwards the request 
+  # to the pod which has the corresponding labels.
+  # In our case, in deployment under "labels:" you can
+  # find "app: flask-app", hence service forward request to
+  # that pod.
+  # Note the selector has to match all labels, here only one 
+  # label ("app: flask-app") is specified, if there are multiple 
+  # labels, then all labels should match
   selector:
     app: flask-app
   ports:
