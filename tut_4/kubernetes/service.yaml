@@ -1,5 +1,8 @@
 apiVersion: v1
 kind: Service
+# This would be the name of the service
+# We will use to star the service by this name
+# Eg: minikube service flask-service 
 metadata:
   name: flask-service
 spec:

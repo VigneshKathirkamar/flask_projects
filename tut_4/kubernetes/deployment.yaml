@@ -12,11 +12,13 @@ spec:
     metadata:
       labels: 
         app: flask-app
+    # spec of pod 
     spec:
       containers: 
       - name: flask-app
-        image: vigneshkathirkamar/hello:0.0.1
-        # image: vigneshkathrikamar/flaskhello
+        image: vigneshkathirkamar/hello_world:0.0.1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
+# containerPort is the port, which app inside the container can be reached on. 
+# targetPort is the port, which is exposed in the cluster and the service connects the pod to other services or users.

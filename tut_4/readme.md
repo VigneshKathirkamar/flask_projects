@@ -2,14 +2,22 @@
 
 ## Pre-requisites:
 <ul>
+<li> Docker installed </li>
 <li>Account on docker hub</li>
 <li>Minikube installed</li>
 </ul>
+
+## Some Useful commands:
+<ol>
+<li> Use `docker system prune -a --volumes` to delete all existing docker images </li>
+</ol>
 
 ## Build docker image:
 ```
 sudo docker build -t hello-world .
 ```
+Used `sudo docker images` to check if the image is built
+
 ## Tag docker image:
 ```
 sudo docker login
@@ -38,4 +46,6 @@ minikube cache add vigneshkathirkamar/firstimage
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
+minikube start
+(use command "minikube dashboard" to preview the kubernets dashboard UI)
 minikube service flask-service
