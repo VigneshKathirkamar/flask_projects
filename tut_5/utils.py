@@ -15,7 +15,7 @@ def colorHistogram(img,histogram_path):
         hist = cv2.calcHist([chan], [0], None, [256], [0, 256])
         plt.plot(hist, color=color)
         plt.xlim([0, 256])
-    plt.savefig(histogram_path+'/histogram.png')    
+    plt.savefig(histogram_path+'/histogram.png')  
 
 def getContours(imgDil,imgContour):
     """

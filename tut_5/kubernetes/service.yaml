@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+# This would be the name of the service
+# We will use to star the service by this name
+# Eg: minikube service flask-service 
+metadata:
+  name: image-statistics-app
+spec:
+  # there are four types of K8's service
+  # (i) Cluster IP (default) (ii) Headless (iii) NodePort (iv) LoadBalancer
+  type: NodePort
+  # selector looks for the pod which has the 
+  # labels specified here, for eg: here the labels is
+  # "app: flask-app", the selector forwards the request 
+  # to the pod which has the corresponding labels.
+  # In our case, in deployment under "labels:" you can
+  # find "app: flask-app", hence service forward request to
+  # that pod.
+  # Note the selector has to match all labels, here only one 
+  # label ("app: flask-app") is specified, if there are multiple 
+  # labels, then all labels should match
+  selector:
+    app: image-statistics-app
+  ports:
+  - protocol: "TCP"
+    port: 6000
+    targetPort: 5000 #The target port has to match the container port on deployment.yaml

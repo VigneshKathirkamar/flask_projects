@@ -21,7 +21,7 @@ for i in processed_images_path:
     finally:
         print("Binary file was present before creation")
 
-img = cv2.imread(img_path+"/"+img_name)
+img = cv2.imread(img_path+img_name)
 original_img = img.copy()
 
 image_height, image_width  = original_img.shape[:2]
@@ -60,4 +60,4 @@ def show_index():
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True)

@@ -1,0 +1,32 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: image-statistics-app
+  # name: flask-hello
+spec:
+  selector: 
+    matchLabels:
+      app: image-statistics-app
+  replicas: 2
+  template:
+    metadata:
+      labels: 
+        app: image-statistics-app
+    # spec of pod 
+    spec:
+      containers: 
+      - name: image-statistics-app
+        image: vigneshkathirkamar/image_statistics:0.0.4
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+# containerPort is the port, which app inside the container can be reached on. 
+# targetPort is the port, which is exposed in the cluster and the service connects the pod to other services or users.
+      #   volumeMounts:
+      #   - name: persistent-storage
+      #     mountPath: /home/vignesh/pv
+      # volumes:
+      #   - name: persistent-storage
+      #     persistentVolumeClaim:
+      #       claimName: image-statistics-pvc
+      
