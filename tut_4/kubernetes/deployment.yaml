@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-app
-  # name: flask-hello
 spec:
   selector: 
     matchLabels:

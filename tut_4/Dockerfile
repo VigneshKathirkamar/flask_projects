@@ -3,7 +3,6 @@ FROM python:3.7
 # making a directory called /app 
 RUN mkdir /app  
 
-# ENV APP_HOME /app
 # setting the working directory to be /app/
 WORKDIR /app/
 
