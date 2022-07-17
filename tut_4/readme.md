@@ -40,8 +40,8 @@ Create a yaml file containing the details of the deployment
 ## Create service file (manifest)
 Create a yaml file containing the details of the service
 
-Error: Failed to pull image
-minikube cache add vigneshkathirkamar/firstimage
+Error: Failed to pull image <br>
+Fix: minikube cache add vigneshkathirkamar/firstimage
 
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
